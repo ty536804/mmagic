@@ -1,0 +1,76 @@
+{{define "footer"}}
+    <footer>
+        <section class="bottom_form">
+            <h3 class="form_tit">填写表单</h3>
+            <form  name="myform" id="myform" class="footer_con_right"  action="#">
+                <input type="hidden" name="com" class="c-com">
+                <p class="c_form">
+                    <label>姓名：</label>
+                    <input type="text" name="mname" class="c-area">
+                </p>
+                <p class="c_form">
+                    <label>电话：</label>
+                    <input type="text" name="tel" class="c-tel">
+                </p>
+                <p class="c_form">
+                    <label>地区：</label>
+                    <input type="text" name="area" class="c-city">
+                </p>
+                <p class="form_btn">
+                    <a class="f_btn">提交</a>
+                </p>
+            </form>
+        </section>
+        <p class="footer_logo"><img data-original="/static/wap/img/footer_logo.png" class="lazy" src=""></p>
+        <section class="authorized_phone">授<span class="footer_line">权电</span>话</section>
+        <section class="footer_bottom_tel">
+            <p class="footer_tel"><img data-original="/static/wap/img/footer_tel.png" src="" class="lazy">400 175 9669</p>
+        </section>
+        <section class="copyright">北京易学教育科技有限公司 © 2017 All Rights Reserved. 京ICP备20014303号</section>
+    </footer>
+    <script type="text/javascript" src="/static/wap/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/layer.js"></script>
+    <script type="text/javascript" src="/static/assets/js/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="/static/wap/js/common.js"></script>
+    <script type="text/javascript" src="/static/wap/js/swiper.min.js"></script>
+    <script type="text/javascript" src="/static/wap/js/jquery.hiSlider.js"></script>
+    <script>
+        window.onload = function() {
+            var swiper = new Swiper('.swiper-container',{
+                autoplay:3000,
+                speed:1000,
+                autoplayDisableOnInteraction : false,
+                loop:true,
+                centeredSlides : true,
+                slidesPerView:2,
+                pagination : '.swiper-pagination',
+                paginationClickable:true,
+                prevButton:'.swiper-button-prev',
+                nextButton:'.swiper-button-next',
+                onInit:function(swiper){
+                    swiper.slides[2].className="swiper-slide swiper-slide-active";//第一次打开不要动画
+                },
+                breakpoints: {
+                    668: {
+                        slidesPerView: 1,
+                    }
+                }
+            });
+            $('.hiSlider3').hiSlider({
+                isFlexible: true,
+                isSupportTouch: true,
+                titleAttr: function(curIdx){
+                    return $('img', this).attr('alt');
+                }
+            });
+
+            $('.hiSlider4').hiSlider({
+                isFlexible: true,
+                isSupportTouch: true,
+                titleAttr: function(curIdx){
+                    return $('img', this).attr('alt');
+                }
+            });
+        }
+    </script>
+{{end}}
